@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { LogErrorRepository } from '../../usecases/repository/logErrorRepository';
 import { Controller } from '../interfaces/controller';
 import { HttpRequest, HttpResponse } from '../interfaces/http';

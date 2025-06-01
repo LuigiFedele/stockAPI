@@ -1,8 +1,8 @@
-import { Express, Router } from "express";
-import main  from "../routes/main";
+import { Express, Router } from 'express';
+import categoryRoutes from '../routes/categoryRoutes';
 
 export default (app: Express): void => {
   const router = Router();
-  main(router);
-  app.use("/api", router);
+  categoryRoutes(router);
+  app.use('/api', router);
 };

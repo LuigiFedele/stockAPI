@@ -1,6 +1,6 @@
-import express  from "express";
-import { cors } from "../middlewares/cors";
-import routes from "./routes";
+import express from 'express';
+import { cors } from '../middlewares/cors';
+import routes from './routes';
 
 const app = express();
 

@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import { CreateCategory } from '../../../usecases';
 import { Controller, HttpRequest, HttpResponse, Validation } from '../../interfaces';
 import {

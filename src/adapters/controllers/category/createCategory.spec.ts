@@ -1,5 +1,3 @@
-/* eslint-disable no-undef */
-/* eslint-disable no-unused-vars */
 import { Category } from '../../../entities/category';
 import { CreateCategory, CreateCategoryModel } from '../../../usecases';
 import { HttpRequest, Validation } from '../../interfaces';

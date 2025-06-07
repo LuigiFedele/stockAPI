@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import { Category } from '../../../entities/category';
 import { CreateCategory, CreateCategoryModel, CreateCategoryRepository } from '../../../usecases';
 

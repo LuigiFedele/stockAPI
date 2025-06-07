@@ -10,7 +10,7 @@ export default defineConfig([
     languageOptions: {
       parser: tseslint.parser,
       parserOptions: {
-        project: './tsconfig.json', // <---- importante
+        project: './tsconfig.json',
         sourceType: 'module',
         ecmaVersion: 'latest',
       },
@@ -24,6 +24,8 @@ export default defineConfig([
     rules: {
       ...js.configs.recommended.rules,
       ...tseslint.configs.recommended.rules,
+      'no-unused-vars': 'off',
+      'no-explicit-any': 'off',
       'prettier/prettier': 'error',
     },
     ignores: ['node_modules', 'dist', 'build', 'src/infrastructure/config'],

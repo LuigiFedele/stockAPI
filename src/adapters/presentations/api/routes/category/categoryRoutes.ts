@@ -1,11 +1,11 @@
 import { Router } from 'express';
-import { expressRouteAdapter } from '../../../expressRouteAdapter';
+import { expressRouteAdapter } from '../../../../expressRouteAdapter';
 import {
   createCategoryControllerFactory,
   listCategoriesControllerFactory,
   updateCategoryControllerFactory,
   deleteCategoryControllerFactory,
-} from '../../../factories';
+} from '../../../../factories';
 
 export default (router: Router): void => {
   router.post('/category', expressRouteAdapter(createCategoryControllerFactory()));

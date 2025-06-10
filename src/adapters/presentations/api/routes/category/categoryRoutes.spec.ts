@@ -1,14 +1,10 @@
 import request from 'supertest';
-import app from '../config/app';
-import { prisma } from '../../../../infrastructure/config/PrismaClient';
+import app from '../../config/app';
+import { prisma } from '../../../../../infrastructure/config/PrismaClient';
 
 const randomName = `categoriaTest-${Math.random().toString(36).substring(2, 8)}`;
 
 describe('Category Routes', () => {
-  beforeEach(async () => {
-    await prisma.category.deleteMany();
-  });
-
   test('Deve retornar 201 ao criar uma categoria', async () => {
     const response = await request(app).post('/api/category').send({
       name: randomName,

@@ -22,14 +22,16 @@ model Category {
 }
 
 model Product {
-  id          String   @id @default(uuid())
-  name        String
-  description String
-  price       Float
-  quantity    Int      @default(0)
-  active      Boolean  @default(true)
-  categoryId  String
-  createdAt   DateTime @default(now())
+  id               String   @id @default(uuid())
+  name             String
+  description      String
+  quantity_minimum Int      @default(0)
+  quantity_supply  Int      @default(0)
+  quantity_maximum Int      @default(0)
+  active           Boolean  @default(true)
+  categoryId       String
+  createdAt        DateTime @default(now())
+  updateAt         DateTime @updatedAt
 
   category     Category     @relation(fields: [categoryId], references: [id])
   stockEntries StockEntry[]
@@ -37,21 +39,23 @@ model Product {
 }
 
 model StockEntry {
-  id        String   @id @default(uuid())
-  productId String
-  userId    String
-  quantity  Int
-  createdAt DateTime @default(now())
+  id          String   @id @default(uuid())
+  productId   String
+  description String?
+  price_und   Decimal
+  quantity    Int
+  entryDate   DateTime @default(now())
 
   product Product @relation(fields: [productId], references: [id])
 }
 
 model StockExit {
-  id        String   @id @default(uuid())
-  productId String
-  userId    String
-  quantity  Int
-  createdAt DateTime @default(now())
+  id          String   @id @default(uuid())
+  productId   String
+  description String?
+  price_und   Decimal
+  quantity    Int
+  exitDate    DateTime @default(now())
 
   product Product @relation(fields: [productId], references: [id])
 }

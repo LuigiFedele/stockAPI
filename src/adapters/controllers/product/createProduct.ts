@@ -19,16 +19,25 @@ export class CreateProductController implements Controller {
         return badRequest(error);
       }
 
-      const { name, description, price, quantity, categoryId } = httpRequest.body;
-      if (!name || !description || !price || !quantity || !categoryId) {
+      const { name, description, quantity_minimum, quantity_supply, quantity_maximum, categoryId } =
+        httpRequest.body;
+      if (
+        !name ||
+        !description ||
+        !quantity_minimum ||
+        !quantity_supply ||
+        !quantity_maximum ||
+        !categoryId
+      ) {
         return badRequest(new Error('Missing required fields'));
       }
 
       const product = await this.createProduct.create({
         name,
         description,
-        price,
-        quantity,
+        quantity_minimum,
+        quantity_supply,
+        quantity_maximum,
         categoryId,
         active: true,
       });

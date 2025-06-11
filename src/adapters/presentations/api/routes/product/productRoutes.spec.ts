@@ -18,8 +18,9 @@ describe('Product Routes', () => {
       data: {
         name: 'product_test',
         description: 'any description',
-        price: 10,
-        quantity: 5,
+        quantity_minimum: 10,
+        quantity_supply: 10,
+        quantity_maximum: 10,
         active: true,
         categoryId,
       },
@@ -28,11 +29,11 @@ describe('Product Routes', () => {
 
   test('Deve retornar 201 ao criar um produto', async () => {
     const response = await request(app).post('/api/product').send({
-      name: 'produto1',
-      description: 'descrição',
-      price: 20,
-      quantity: 10,
-      active: true,
+      name: 'product_test',
+      description: 'any description',
+      quantity_minimum: 10,
+      quantity_supply: 10,
+      quantity_maximum: 10,
       categoryId,
     });
 
@@ -68,8 +69,9 @@ describe('Product Routes', () => {
       id: product.id,
       name: 'produto atualizado',
       description: 'nova descrição',
-      price: 30,
-      quantity: 15,
+      quantity_minimum: 10,
+      quantity_supply: 10,
+      quantity_maximum: 10,
       active: true,
       categoryId,
     });

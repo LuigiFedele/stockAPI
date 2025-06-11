@@ -9,8 +9,9 @@ const makeFakeProducts = (): Product[] => {
       id: 'any_id',
       name: 'any_name',
       description: 'any_description',
-      price: 10,
-      quantity: 10,
+      quantity_minimum: 10,
+      quantity_supply: 10,
+      quantity_maximum: 10,
       active: false,
       categoryId: 'any_category_id',
     });

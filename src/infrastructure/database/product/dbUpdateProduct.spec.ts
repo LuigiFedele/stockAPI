@@ -26,7 +26,9 @@ const makeFakeProduct = (): UpdateProductModel => ({
   id: '1',
   name: 'any_name',
   description: 'any_description',
-  price: 10,
+  quantity_minimum: 10,
+  quantity_supply: 10,
+  quantity_maximum: 10,
   categoryId: '1',
 });
 

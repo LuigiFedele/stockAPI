@@ -14,14 +14,24 @@ export class UpdateProductController implements Controller {
 
   async handle(httpRequest: HttpRequest): Promise<HttpResponse> {
     try {
-      const { id, name, description, price, quantity, active, categoryId } = httpRequest.body;
+      const {
+        id,
+        name,
+        description,
+        quantity_minimum,
+        quantity_supply,
+        quantity_maximum,
+        active,
+        categoryId,
+      } = httpRequest.body;
 
       const error = this.validation.validate({
         id,
         name,
         description,
-        price,
-        quantity,
+        quantity_minimum,
+        quantity_supply,
+        quantity_maximum,
         active,
         categoryId,
       });
@@ -34,8 +44,9 @@ export class UpdateProductController implements Controller {
         id,
         name,
         description,
-        price,
-        quantity,
+        quantity_minimum,
+        quantity_supply,
+        quantity_maximum,
         active,
         categoryId,
       });

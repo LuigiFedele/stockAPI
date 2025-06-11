@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import { Validation } from '../interfaces/validation';
 import { MissingParamError } from '../presentations/api/errors/missing-param-error';
 

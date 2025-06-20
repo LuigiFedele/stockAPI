@@ -7,4 +7,5 @@ export interface Product {
   quantity_maximum: number;
   active: boolean;
   categoryId: string;
+  quantity_current?: number;
 }

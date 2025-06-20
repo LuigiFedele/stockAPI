@@ -1,0 +1,432 @@
+{
+	"info": {
+		"_postman_id": "d55ae7a4-91f7-4691-9fe0-b82e18ed2d52",
+		"name": "Stock API",
+		"description": "Application created with SOLID, Clean Archicture and TDD( Test Drive Development) .",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33269251"
+	},
+	"item": [
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "Add Category",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Category2\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost3000}}/category",
+							"host": [
+								"{{localhost3000}}"
+							],
+							"path": [
+								"category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Categories",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost3000}}/category",
+							"host": [
+								"{{localhost3000}}"
+							],
+							"path": [
+								"category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Category",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": \"5f3f55e1-5f5a-482d-9118-7be809f6a97d\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost3000}}/category",
+							"host": [
+								"{{localhost3000}}"
+							],
+							"path": [
+								"category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Category",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": \"a0f6a803-9ed4-4e23-a806-781f009b0f48\",\n  \"name\": \"CategoryNew\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost3000}}/category",
+							"host": [
+								"{{localhost3000}}"
+							],
+							"path": [
+								"category"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "Add Product",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Produto1\",\n    \"description\": \"Produto detalhado 1\",\n    \"quantity_minimum\": 10,\n    \"quantity_supply\": 10,\n    \"quantity_maximum\": 20,\n    \"categoryId\": \"4152f493-bb29-40c1-8214-07e70ad14bc4\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost3000}}/product",
+							"host": [
+								"{{localhost3000}}"
+							],
+							"path": [
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Product",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost3000}}/product/1e9c7778-e790-4827-97cd-c8d44c06eb79",
+							"host": [
+								"{{localhost3000}}"
+							],
+							"path": [
+								"product",
+								"1e9c7778-e790-4827-97cd-c8d44c06eb79"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Products",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost3000}}/product",
+							"host": [
+								"{{localhost3000}}"
+							],
+							"path": [
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Product",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"aa046349-ba48-4939-9cce-21b8f4aeaf98\",\n    \"description\": \"Produto detalhado 2\",\n    \"quantity_minimum\": 2,\n    \"quantity_supply\": 3,\n    \"quantity_maximum\": 5,\n    \"categoryId\": \"a0f6a803-9ed4-4e23-a806-781f009b0f48\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost3000}}/product",
+							"host": [
+								"{{localhost3000}}"
+							],
+							"path": [
+								"product"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Stock Entry",
+			"item": [
+				{
+					"name": "Create Entry",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"productId\": \"1e9c7778-e790-4827-97cd-c8d44c06eb79\",\n    \"description\": \"Entrada detalhada 1\",\n    \"price_und\": 10,\n    \"quantity\": 10\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/entries",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"entries"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Entries",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost3000}}/entries",
+							"host": [
+								"{{localhost3000}}"
+							],
+							"path": [
+								"entries"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Stock Exit",
+			"item": [
+				{
+					"name": "Create Exit",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"productId\": \"1e9c7778-e790-4827-97cd-c8d44c06eb79\",\n    \"description\": \"Saída detalhada 1\",\n    \"price_und\": 5,\n    \"quantity\": 5\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost3000}}/exits",
+							"host": [
+								"{{localhost3000}}"
+							],
+							"path": [
+								"exits"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Exits",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost3000}}/exits",
+							"host": [
+								"{{localhost3000}}"
+							],
+							"path": [
+								"exits"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "localhost3000",
+			"value": "http://localhost:3000/api",
+			"type": "string"
+		},
+		{
+			"key": "localhost8080",
+			"value": "http://localhost:8080/",
+			"type": "string"
+		}
+	]
+}

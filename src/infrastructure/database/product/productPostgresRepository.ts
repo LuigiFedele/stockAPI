@@ -46,7 +46,45 @@ export class ProductPostgresRepository
         id: productId,
       },
     });
-    return product;
+
+    if (!product) {
+      return null;
+    }
+
+    const [entries, exits] = await Promise.all([
+      prisma.stockEntry.aggregate({
+        where: {
+          productId: productId,
+        },
+        _sum: {
+          quantity: true,
+        },
+      }),
+      prisma.stockExit.aggregate({
+        where: {
+          productId: productId,
+        },
+        _sum: {
+          quantity: true,
+        },
+      }),
+    ]);
+
+    const totalEntries = entries._sum.quantity ?? 0;
+
+    const totalExits = exits._sum.quantity ?? 0;
+
+    return {
+      id: product.id,
+      name: product.name,
+      description: product.description,
+      quantity_minimum: product.quantity_minimum,
+      quantity_supply: product.quantity_supply,
+      quantity_maximum: product.quantity_maximum,
+      active: product.active,
+      categoryId: product.categoryId,
+      quantity_current: totalEntries - totalExits,
+    };
   }
 
   async list(): Promise<Product[]> {

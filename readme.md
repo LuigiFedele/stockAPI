@@ -91,13 +91,19 @@ POSTGRES_PASSWORD = admin
 POSTGRES_DB_DEV =  storageStock
 ```
 
-### 4. Rode as migrations
+### 4. Inicie o docker com o banco de dados
+
+```bash
+docker compose up
+```
+
+### 5. Rode as migrations
 
 ```bash
 npx prisma migrate dev --name init
 ```
 
-### 5. Inicie o servidor
+### 6. Inicie o servidor
 
 ```bash
 npm run dev

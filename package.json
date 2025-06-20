@@ -10,7 +10,7 @@
     "lint": "eslint src --ext .ts,.js",
     "lint:fix": "eslint src --ext .ts,.js --fix",
     "format": "prettier --write src",
-    "test": "jest --passWithNoTests  --runInBand",
+    "test": "jest --passWithNoTests  --runInBand --silent --reporters=default",
     "test:verbose": "jest --passWithNoTests --runInBand --verbose"
   },
   "prisma": {

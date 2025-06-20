@@ -1,4 +1,4 @@
-export interface StockEntry {
+export interface StockExit {
   id: string;
   productId: string;
   description: string | null;

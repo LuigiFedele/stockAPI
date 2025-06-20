@@ -39,6 +39,11 @@ describe('Product Routes', () => {
 
     expect(response.status).toBe(201);
     expect(response.body).toHaveProperty('id');
+    expect(response.body.name).toBe('product_test');
+    expect(response.body.description).toBe('any description');
+    expect(response.body.quantity_minimum).toBe(10);
+    expect(response.body.quantity_supply).toBe(10);
+    expect(response.body.quantity_maximum).toBe(10);
   });
 
   test('Deve retornar 400 se dados obrigatórios forem omitidos', async () => {
@@ -58,7 +63,7 @@ describe('Product Routes', () => {
     const response = await request(app).get('/api/product');
 
     expect(response.status).toBe(200);
-    expect(response.body).toBeInstanceOf(Array);
+    expect(Array.isArray(response.body)).toBe(true);
     expect(response.body[0]).toHaveProperty('id');
   });
 
@@ -79,13 +84,7 @@ describe('Product Routes', () => {
     expect(response.status).toBe(204);
   });
 
-  test('Deve retornar 204 ao deletar um produto', async () => {
-    const product = await makeProduct();
-
-    const response = await request(app).delete('/api/product').send({
-      id: product.id,
-    });
-
-    expect(response.status).toBe(204);
+  afterAll(async () => {
+    await prisma.$disconnect();
   });
 });

@@ -15,3 +15,13 @@ export * from './product/repository/createProductRepository';
 export * from './product/repository/getProductRepository';
 export * from './product/repository/listProductsRepository';
 export * from './product/repository/updateProductRepository';
+
+export * from './stock/stockEntry/createStockEntry';
+export * from './stock/stockEntry/listStockEntry';
+export * from './stock/stockEntry/repository/createStockEntryRepository';
+export * from './stock/stockEntry/repository/listStockEntryRepository';
+
+export * from './stock/stockExit/createStockExit';
+export * from './stock/stockExit/listStockExit';
+export * from './stock/stockExit/repository/createStockExitRepository';
+export * from './stock/stockExit/repository/listStockExitRepository';
